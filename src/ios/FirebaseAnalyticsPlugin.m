@@ -16,7 +16,7 @@
 - (void)logEvent:(CDVInvokedUrlCommand *)command {
     NSString* name = [command.arguments objectAtIndex:0];
     NSDictionary* parameters = [command.arguments objectAtIndex:1];
-    
+    /*
     if([name isEqualToString:@"sign_up"]) {
         [FIRAnalytics logEventWithName:kFIREventSignUp parameters:@{
             kFIRParameterSignUpMethod: [parameters valueForKey:@"method"]
@@ -28,7 +28,8 @@
     } else {
         [FIRAnalytics logEventWithName:name parameters:parameters];
     }
-
+    */
+    [FIRAnalytics logEventWithName:name parameters:parameters];
     CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
