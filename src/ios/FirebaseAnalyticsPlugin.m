@@ -22,8 +22,8 @@
             kFIRParameterSignUpMethod: [parameters valueForKey:@"method"]
         }];
     } else if([name isEqualToString:@"login"]) {
-        [FIRAnalytics logEventWithName:kFIREventSignUp parameters:@{
-            kFIRParameterSignUpMethod: [parameters valueForKey:@"method"]
+        [FIRAnalytics logEventWithName:kFIREventLogin parameters:@{
+            kFIRParameterMethod: [parameters valueForKey:@"method"]
         }];
     } else {
         [FIRAnalytics logEventWithName:name parameters:parameters];
